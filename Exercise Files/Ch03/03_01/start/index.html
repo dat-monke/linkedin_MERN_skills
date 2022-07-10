@@ -17,25 +17,33 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      function Header() {
+      function Header(props) {
         return (
           <header>
-            <h1>Eve's Kitchen</h1>
+            <h1>{props.name}'s Kitchen</h1>
           </header>
         );
       }
-      function Main() {
+      function Main(example_variable) {
         return (
           <section> 
-            <p>We serve the best food around town</p>
+            <p>We serve the {example_variable.adjective} food around town</p>
           </section>
+        )
+      }
+      function Footer(test_var2) {
+        return (
+          <footer>
+            <p>Copyright {test_var2.year} </p>
+          </footer>
         )
       }
       function App() {
         return (
           <div>
-            <Header />
-            <Main />
+            <Header name="David"/>
+            <Main adjective="most amazing"/>
+            <Footer year={2022}/>
           </div>
         )
       }
@@ -70,15 +78,65 @@
         document.getElementById("root")
       );
     
+    Method 2: Combining all the elements into a function that renders everything
+    function Header() {
+        return (
+          <header>
+            <h1>Eve's Kitchen</h1>
+          </header>
+        );
+      }
+    function Main() {
+        return (
+          <section> 
+            <p>We serve the best food around town</p>
+          </section>
+        )
+      }
+    function App() { #### You basically create a function that uses the previous ones
+      return (
+        <div>
+          <Header /> 
+          <Main />
+        </div>
+      )
+    }
+    ReactDOM.render(
+        <App />, ##### Then you render the functions down here
+        document.getElementById("root")
+      );
+
     -->
 
     <!-- Passing variables to functions 
     
-    
-    
-    
-    
-    
+      Method 1:
+      function Header(props) {
+        return (
+          <header>
+            <h1>{props.name}'s Kitchen</h1> ### You create a value to be replaced
+          </header>
+        );
+      }
+      function Main() {
+        return (
+          <section> 
+            <p>We serve the best food around town</p>
+          </section>
+        )
+      }
+      function App() {
+        return (
+          <div>
+            <Header name="David"/> ##### Here you specify the property and value
+            <Main />
+          </div>
+        )
+      }
+      ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+      );
     
     -->
   </body>
