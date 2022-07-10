@@ -2,17 +2,112 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <!-- This first src link is to the entire library of React.js -->
     <script
       src="https://unpkg.com/react@17/umd/react.development.js"
-      crossorigin
-    ></script>
+      crossorigin>
+    </script>
+    <!-- This is the src link brings React.js to the page/browser -->
     <script
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      crossorigin
-    ></script>
+      crossorigin>
+    </script>
+    <!-- This is the src link that brings emoji's, babel.min allows for minimalist to run faster -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>React ⚛️</title>
   </head>
   <body>
+    <div id="root"></div>
+    <!-- This creates the header using React methods, p1=element, p2=parameters, p3=contents-->
+    <!-- You have to change the script type if you are using emoji to babel, 
+          else the default would be to use javascript -->
+    <script type="text/babel">
+      let moon = "🌙";
+      let heart = "❤";
+      let celebration = "🎉";
+      let text = "Sample text";
+      ReactDOM.render(
+        <ul>
+          <li>{moon}</li>
+          <li>{heart}</li>
+          <li>{celebration}</li>
+          <li>{text}</li>
+        </ul>,
+        document.getElementById("root")
+      );
+    </script>
+
+    <!-- Methods to create a basic h1 equivalent in HTML
+    
+    Traditional HTML Method: 
     <h1>Getting Started with React</h1>
+
+    Method 1: 
+      ReactDOM.render(
+          React.createElement("h1", null, "React created H1 element"), 
+          document.getElementById("root")
+        );
+
+    Method 2:
+      let heading = React.createElement(
+        "h1", 
+        null, 
+        "React created H1 element"
+      ); 
+      ReactDOM.render(
+        heading,
+        document.getElementById("root")
+      );
+    
+    -->
+
+    <!-- Methods to create a list in React.js 
+      
+      Method 1:
+      let ul = React.createElement(
+          "ul", 
+          { style: { color: "blue" }}, 
+          React.createElement("li", null, "Monday"),
+          React.createElement("li", null, "Tuesday"),
+          React.createElement("li", null, "Wednesday"),
+          React.createElement("li", null, "Thursday"),
+          React.createElement("li", null, "Friday")
+        ); 
+        ReactDOM.render(
+          ul,
+          document.getElementById("root")
+        );
+    
+    -->
+
+    <!-- Methods to input elements using JSX 
+    
+      Method 1: important note here: <script type="text/javascript">
+      ReactDOM.render(
+        <ul>
+          <li>🌙</li>
+          <li>❤</li>
+          <li>🎉</li>
+        </ul>,
+        document.getElementById("root")
+      );
+
+      Method 2: important note here: <script type="text/babel"
+      <script type="text/babel">
+        let moon = "🌙";
+        let heart = "❤";
+        let celebration = "🎉";
+        let text = "Sample text";
+        ReactDOM.render(
+          <ul>
+            <li>{moon}</li>
+            <li>{heart}</li>
+            <li>{celebration}</li>
+            <li>{text}</li>
+          </ul>,
+          document.getElementById("root")
+        );
+    
+    -->
   </body>
 </html>
