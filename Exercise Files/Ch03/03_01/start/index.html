@@ -22,12 +22,64 @@
           <header>
             <h1>Eve's Kitchen</h1>
           </header>
+        );
+      }
+      function Main() {
+        return (
+          <section> 
+            <p>We serve the best food around town</p>
+          </section>
+        )
+      }
+      function App() {
+        return (
+          <div>
+            <Header />
+            <Main />
+          </div>
         )
       }
       ReactDOM.render(
-        <Header />,
+        <App />,
         document.getElementById("root")
       );
     </script>
+
+    <!-- Functions can be rendered in different ways 
+    
+    Method 1:
+    function Header() {
+        return (
+          <header>
+            <h1>Eve's Kitchen</h1>
+          </header>
+        );
+      }
+    function Main() {
+        return (
+          <section> 
+            <p>We serve the best food around town</p>
+          </section>
+        )
+      }
+    ReactDOM.render(
+        <div>
+          <Header />
+          <Main />
+        </div>,
+        document.getElementById("root")
+      );
+    
+    -->
+
+    <!-- Passing variables to functions 
+    
+    
+    
+    
+    
+    
+    
+    -->
   </body>
 </html>
