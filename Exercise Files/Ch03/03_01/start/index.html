@@ -24,10 +24,16 @@
           </header>
         );
       }
-      function Main(example_variable) {
+      function Main(props) {
         return (
           <section> 
-            <p>We serve the {example_variable.adjective} food around town</p>
+            <ul>
+              {props.dishes.map((dish, i) => (
+                <li key={i}>
+                  {dish.title}
+                </li>
+              ))}
+            </ul>
           </section>
         )
       }
@@ -38,11 +44,26 @@
           </footer>
         )
       }
+
+      const dishes = [
+        "French Fries", 
+        "Hamburger", 
+        "Potatoes"
+      ]
+
+      const dishObjectIDs = dishes.map(
+        (dishes, i) => ({
+          id: i,
+          title: dish
+      }));
+
       function App() {
         return (
           <div>
             <Header name="David"/>
-            <Main adjective="most amazing"/>
+            <Main 
+              adjective="most amazing"
+              dishes = {dishObjectIDs}/>
             <Footer year={2022}/>
           </div>
         )
@@ -137,6 +158,41 @@
         <App />,
         document.getElementById("root")
       );
+    
+    -->
+
+    <!-- Example array and representation
+    
+    function Main(example_variable) {
+      return (
+        <section> 
+          <ul>
+            {example_variable.dishes.map(dish => ( ### Here you are mapping variables from the array to be displayed
+              <li>{dish}</li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    const dishes = [
+        "French Fries", 
+        "Hamburger", 
+        "Potatoes"
+      ]
+    
+    function App() {
+      return (
+        <div>
+          <Header name="David"/>
+          <Main 
+            adjective="most amazing"
+            dishes = {dishes}/> ###### Here we are saying that dishes is pulling from the array variable called dishes
+          <Footer year={2022}/> ###### One thing to note here, numbers you put in {} vs "text"
+        </div>
+      )
+    }
+    
     
     -->
   </body>
