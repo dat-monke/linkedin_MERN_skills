@@ -64,13 +64,13 @@
 
       function App() {
         return (
-          <div>
+          <React.Fragment>
             <Header name="David"/>
             <Main 
               adjective="most amazing"
               dishes = {dishObjects}/>
             <Footer year={2022}/>
-          </div>
+          </React.Fragment>
         )
       }
       ReactDOM.render(
@@ -216,6 +216,37 @@
       alt = "Random ass dog photo I found"
     />
 
+    -->
+
+    <!-- Messy DIV clean up 
+    
+    FROM THIS : 
+
+    function App() {
+        return (
+          <div>
+            <Header name="David"/>
+            <Main 
+              adjective="most amazing"
+              dishes = {dishObjects}/>
+            <Footer year={2022}/>
+          </div>
+        )
+      }
+    
+    TO THIS : 
+
+    function App() {
+        return (
+          <React.Fragment>
+            <Header name="David"/>
+            <Main 
+              adjective="most amazing"
+              dishes = {dishObjects}/>
+            <Footer year={2022}/>
+          </React.Fragment>
+        )
+      }
     -->
   </body>
 </html>
