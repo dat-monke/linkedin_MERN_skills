@@ -51,10 +51,10 @@
         "Potatoes"
       ]
 
-      const dishObjectIDs = dishes.map(
+      const dishObjects = dishes.map(
         (dishes, i) => ({
           id: i,
-          title: dish
+          title: dishes
       }));
 
       function App() {
@@ -63,7 +63,7 @@
             <Header name="David"/>
             <Main 
               adjective="most amazing"
-              dishes = {dishObjectIDs}/>
+              dishes = {dishObjects}/>
             <Footer year={2022}/>
           </div>
         )
