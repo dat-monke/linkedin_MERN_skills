@@ -1,5 +1,12 @@
 import "./App.css";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
+
+function useInput(initialValue) {
+  const [value, setValue] = useState(initialValue)
+  return [
+    {value, onChange: e => setValue(e.target.value)}
+  ], () => setValue(initialValue)
+}
 
 function App() {
   const [checked, setChecked] = useReducer(
