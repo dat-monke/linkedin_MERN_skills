@@ -86,6 +86,7 @@ Check state function using useReducer: REQUIRES import { useReducer } from 'reac
   const [checked, setChecked] = useReducer((checked) => !checked, false)
   
   <input type="checkbox" value={checked} onChange={setChecked}/>
+  <label> {checked ? "checked" : "not checked"} </label> 
 
 Creating a popup box/notification 
 
