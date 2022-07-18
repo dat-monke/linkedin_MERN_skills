@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // You can declare the variable/prop and set it to the value here
   <React.StrictMode>
-    <App />
+    <App library="Red"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
